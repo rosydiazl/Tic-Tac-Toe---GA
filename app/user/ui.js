@@ -9,7 +9,7 @@ const onSignUpSuccess = function (data) {
 
 const onSignUpFailure = function (error) {
   $('#message').text('Sign up failed.')
-  console.error('Sign up failed. Error is: ', error)
+  console.error('Sign up failed. Error is: ', error.status)
 }
 const onSignInSuccess = function (data) {
   $('#message').text('Signed in successfully.')
@@ -20,7 +20,7 @@ const onSignInSuccess = function (data) {
 
 const onSignInFailure = function (error) {
   $('#message').text('Sign in failed.')
-  console.error('Sign in failed. Error is: ', error)
+  console.error('Sign in failed. Error is: ', error.status)
 }
 
 const onSignOutSuccess = function () {
@@ -31,7 +31,7 @@ const onSignOutSuccess = function () {
 
 const onSignOutFailure = function (error) {
   $('#message').text('Sign out failed.')
-  console.error('Sign out failed. Error is: ', error)
+  console.error('Sign out failed. Error is: ', error.status)
 }
 module.exports = {
   onSignUpSuccess,
