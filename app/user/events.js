@@ -8,7 +8,7 @@ const ui = require('./ui')
 
 const onSignUp = function (event) {
   event.preventDefault()
-  console.log('THIS WORKS!')
+  // console.log('THIS WORKS!')
 
   const data = getFormFields(this)
   api.signUp(data)
@@ -18,7 +18,7 @@ const onSignUp = function (event) {
 
 const onSignIn = function (event) {
   event.preventDefault()
-  console.log('THIS WORKS TOO!')
+  // console.log('THIS WORKS TOO!')
 
   const data = getFormFields(this)
   api.signIn(data)
@@ -28,10 +28,9 @@ const onSignIn = function (event) {
 
 const onSignOut = function (event) {
   event.preventDefault()
-  console.log('THIS WORKS ALSO!')
+  // console.log('THIS WORKS ALSO!')
 
-  const data = getFormFields(this)
-  api.signOut(data)
+  api.signOut()
     .then(ui.onSignOutSuccess)
     .catch(ui.onSignOutFailure)
 }

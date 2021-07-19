@@ -1,7 +1,6 @@
 'use strict'
 
-const config = require('../config')
-// const store = require('../store')
+const store = require('../store')
 
 const signUp = function (data) {
   return $.ajax({
@@ -18,11 +17,13 @@ const signIn = function (data) {
     data: data
   })
 }
-const signOut = function (data) {
+const signOut = function () {
   return $.ajax({
     url: 'https://tic-tac-toe-api-development.herokuapp.com/sign-out',
     method: 'DELETE',
-    data: data
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
   })
 }
 
