@@ -35,8 +35,17 @@ const onSignOut = function (event) {
     .catch(ui.onSignOutFailure)
 }
 
+const onCreateGame = function () {
+  console.log('Game created')
+
+  api.signOut()
+    .then(ui.onCreateGameSuccess)
+    .catch(ui.onCreateGameFailure)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
-  onSignOut
+  onSignOut,
+  onCreateGame
 }

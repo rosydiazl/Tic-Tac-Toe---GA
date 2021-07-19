@@ -16,7 +16,7 @@ const onSignInSuccess = function (data) {
   console.log('Sign in successful. Data is: ', data)
   $('form').trigger('reset')
   store.user = data.user
-  $('#new-game').show()
+  $('#new-game').show('slow')
 }
 
 const onSignInFailure = function (error) {
@@ -34,11 +34,22 @@ const onSignOutFailure = function (error) {
   $('#message').text('Sign out failed.')
   console.error('Sign out failed. Error is: ', error.status)
 }
+
+const onCreateGameSuccess = function () {
+  $('#message').text('Success. Testing it works')
+}
+
+const onCreateGameFailure = function () {
+  $('#message').text('Failure. Testing it works')
+}
+
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
   onSignInSuccess,
   onSignInFailure,
   onSignOutSuccess,
-  onSignOutFailure
+  onSignOutFailure,
+  onCreateGameSuccess,
+  onCreateGameFailure
 }
