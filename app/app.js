@@ -9,5 +9,5 @@ $(() => {
   $('#sign-up').on('submit', userEvents.onSignUp)
   $('#sign-in').on('submit', userEvents.onSignIn)
   $('#sign-out').on('submit', userEvents.onSignOut)
-  $('#new-game').on('click', userEvents.newGame)
+  $('#new-game').hide()a
 })

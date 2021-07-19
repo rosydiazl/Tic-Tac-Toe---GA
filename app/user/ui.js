@@ -16,6 +16,7 @@ const onSignInSuccess = function (data) {
   console.log('Sign in successful. Data is: ', data)
   $('form').trigger('reset')
   store.user = data.user
+  $('#new-game').show()
 }
 
 const onSignInFailure = function (error) {
