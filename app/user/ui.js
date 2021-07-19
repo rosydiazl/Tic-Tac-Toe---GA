@@ -35,12 +35,14 @@ const onSignOutFailure = function (error) {
   console.error('Sign out failed. Error is: ', error.status)
 }
 
-const onCreateGameSuccess = function () {
-  $('#message').text('Success. Testing it works')
+const onCreateGameSuccess = function (response) {
+  $('#message').text('Success. Testing it works.')
+  console.log('Response is', response)
 }
 
-const onCreateGameFailure = function () {
-  $('#message').text('Failure. Testing it works')
+const onCreateGameFailure = function (error) {
+  $('#message').text('Failure. Testing it works.')
+  console.log('Error is', error.status)
 }
 
 module.exports = {

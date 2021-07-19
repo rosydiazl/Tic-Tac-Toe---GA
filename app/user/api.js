@@ -27,12 +27,13 @@ const signOut = function () {
   })
 }
 
-const createGame = function () {
+const createGame = function (response) {
   return $.ajax({
     url: 'https://tic-tac-toe-api-development.herokuapp.com/games',
     method: 'POST',
     headers: {
-      Authorization: 'Bearer ' + store.user.token
+      Authorization: 'Bearer ' + store.user.token,
+      response: response
     }
   })
 }

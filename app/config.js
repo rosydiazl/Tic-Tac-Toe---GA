@@ -1,7 +1,7 @@
 let apiUrl
 const apiUrls = {
-  production: '<replace-with-heroku-url',
-  development: 'https://git.generalassemb.ly/ga-wdi-boston/game-project-api#api-url'
+  production: 'https://tic-tac-toe-api-production.herokuapp.com',
+  development: 'https://tic-tac-toe-api-development.herokuapp.com'
 }
 
 if (window.location.hostname === 'localhost') {
