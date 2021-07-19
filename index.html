@@ -10,6 +10,10 @@
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Tourney:wght@300&display=swap"
+      rel="stylesheet">
     </head>
     <body>
       <h1>Tic-Tac-Toe</h1>
@@ -30,14 +34,29 @@
         <input name="credentials[password]" type="password">
         <label>Password confirmation</label>
         <input name="credentials[password_confirmation]" type="password">
-        <input type="submit" value="Sign Up">
+        <input type="submit" value="Sign up">
       </form>
       <form id="sign-out">
-        <input type="submit" value="Sign Out">
+        <input type="submit" value="Sign out">
       </form>
 
-      <button id="new-game">New Game</button>
+      <form id="new-game">
+<input type="submit" value="Start game">
+      </form>
+
 
       <p id="message"></p>
+
+      <div id="game-board">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+      </div>
     </body>
 </html>

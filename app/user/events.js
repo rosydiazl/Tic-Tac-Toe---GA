@@ -1,6 +1,7 @@
 'use strict'
 
 const getFormFields = require('../../lib/get-form-fields')
+// const store = require('../store')
 // const  { apiUrl }  = require('../config')
 
 const api = require('./api')
@@ -35,10 +36,12 @@ const onSignOut = function (event) {
     .catch(ui.onSignOutFailure)
 }
 
-const onCreateGame = function () {
-  console.log('Game created')
+const onCreateGame = function (event) {
+  event.preventDefault()
+  // console.log('Game created')
 
-  api.signOut()
+  const data = getFormFields(this)
+  api.createGame(data)
     .then(ui.onCreateGameSuccess)
     .catch(ui.onCreateGameFailure)
 }

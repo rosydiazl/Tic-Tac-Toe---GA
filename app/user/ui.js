@@ -13,9 +13,9 @@ const onSignUpFailure = function (error) {
 }
 const onSignInSuccess = function (data) {
   $('#message').text('Signed in successfully.')
+  store.user = data.user
   console.log('Sign in successful. Data is: ', data)
   $('form').trigger('reset')
-  store.user = data.user
   $('#new-game').show('slow')
 }
 
@@ -26,8 +26,8 @@ const onSignInFailure = function (error) {
 
 const onSignOutSuccess = function () {
   $('#message').text('Signed out successfully.')
-  console.log('Sign out successfully and nothing was returned.')
   $('form').trigger('reset')
+  console.log('Sign out successfully and nothing was returned.')
 }
 
 const onSignOutFailure = function (error) {
@@ -35,13 +35,16 @@ const onSignOutFailure = function (error) {
   console.error('Sign out failed. Error is: ', error.status)
 }
 
-const onCreateGameSuccess = function (response) {
-  $('#message').text('Success. Testing it works.')
-  console.log('Response is', response)
+const onCreateGameSuccess = function (data) {
+  $('#message').text('Success.')
+  store.user = data.user
+  console.log('Data is', data)
+  store.user = null
+  $('#game-board').show('slow')
 }
 
 const onCreateGameFailure = function (error) {
-  $('#message').text('Failure. Testing it works.')
+  $('#message').text('Unable to start new game.')
   console.log('Error is', error.status)
 }
 

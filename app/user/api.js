@@ -28,14 +28,14 @@ const signOut = function () {
   })
 }
 
-const createGame = function (response) {
+const createGame = function (data) {
   return $.ajax({
     url: config.apiUrl + '/games',
     method: 'POST',
     headers: {
-      Authorization: 'Bearer ' + store.user.token,
-      response: response
-    }
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data: data
   })
 }
 

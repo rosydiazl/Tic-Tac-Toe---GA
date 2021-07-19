@@ -1,1 +1,27 @@
 @import '~bootstrap/scss/bootstrap';
+
+body {
+  background-color: black;
+  color: white;
+}
+
+h1 {
+  font-family: 'Tourney', cursive;
+  font-size: 4rem;
+}
+
+h3, p, label {
+font-family: 'Roboto', sans-serif;
+}
+
+#game-board{
+display: grid;
+grid-template-columns: 120px 120px 120px;
+grid-template-rows: 120px 120px 120px 20px;
+justify-content: center;
+}
+
+.box {
+  background-color: white;
+  border: 5px solid black;
+}

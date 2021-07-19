@@ -11,4 +11,5 @@ $(() => {
   $('#sign-out').on('submit', userEvents.onSignOut)
   $('#new-game').hide()
   $('#new-game').on('click', userEvents.onCreateGame)
+  $('#game-board').hide()
 })
