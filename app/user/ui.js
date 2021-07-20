@@ -29,6 +29,7 @@ const onSignOutSuccess = function () {
   $('#message').text('Signed out successfully.')
   $('form').trigger('reset')
   console.log('Sign out successfully and nothing was returned.')
+  $('#game-board').hide()
 }
 
 const onSignOutFailure = function (error) {

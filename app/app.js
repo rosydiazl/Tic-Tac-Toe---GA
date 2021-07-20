@@ -14,4 +14,16 @@ $(() => {
   $('#game-board').hide()
   $('#sign-out').hide()
   $('#game-board').on('click')
+  let currentPlayer = 'X'
+
+  const onClickBox = (event) => {
+    console.log('Clicked!')
+
+    const box = $(event.target)
+
+    box.css('background', 'transparent').text(currentPlayer)
+
+    currentPlayer = currentPlayer === 'O' ? 'X' : 'O'
+  }
+  $('.box').on('click', onClickBox)
 })
