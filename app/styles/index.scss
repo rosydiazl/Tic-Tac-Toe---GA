@@ -1,6 +1,7 @@
 @import '~bootstrap/scss/bootstrap';
 
 body {
+  text-align: center;
   background-color: black;
   color: white;
 }
@@ -13,15 +14,44 @@ h1 {
 h3, p, label {
 font-family: 'Roboto', sans-serif;
 }
+ p {
+   text-align: center;
+   word-wrap: normal;
+ }
 
-#game-board{
-display: grid;
-grid-template-columns: 120px 120px 120px;
-grid-template-rows: 120px 120px 120px 20px;
-justify-content: center;
+#sign-in {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#sign-up {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#game-board {
+height: 100vh;
+}
+
+.board {
+  margin: auto;
+  max-height: calc(100vh - 75px);
+  max-width: calc(100vh - 75px);
+  background-size: cover;
 }
 
 .box {
-  background-color: white;
-  border: 5px solid black;
+  display: flex;
+   justify-content: center;
+   align-items: center;
+  border-bottom: 5px solid white;
+  border-right: 5px solid red;
+  min-height: calc(100% / 3);
+  color: white;
+  font-size: 15vh;
+ &:nth-last-child(-1n + 3) {
+    border-bottom: 0;
+  }
 }

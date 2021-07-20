@@ -16,7 +16,8 @@ const onSignInSuccess = function (data) {
   store.user = data.user
   console.log('Sign in successful. Data is: ', data)
   $('form').trigger('reset')
-  $('#new-game').show('slow')
+  $('#new-game').show()
+  $('#sign-out').show()
 }
 
 const onSignInFailure = function (error) {
@@ -36,10 +37,9 @@ const onSignOutFailure = function (error) {
 }
 
 const onCreateGameSuccess = function (data) {
-  $('#message').text('Success.')
-  store.user = data.user
-  console.log('Data is', data)
-  store.user = null
+// $('#message').text('Success.')
+  store.game = data.game
+  console.log('Data is', data.game)
   $('#game-board').show('slow')
 }
 

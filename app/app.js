@@ -12,4 +12,6 @@ $(() => {
   $('#new-game').hide()
   $('#new-game').on('click', userEvents.onCreateGame)
   $('#game-board').hide()
+  $('#sign-out').hide()
+  $('#game-board').on('click')
 })
