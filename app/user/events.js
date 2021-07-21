@@ -1,7 +1,7 @@
 'use strict'
 
 const getFormFields = require('../../lib/get-form-fields')
-// const store = require('../store')
+const store = require('../store')
 // const  { apiUrl }  = require('../config')
 
 const api = require('./api')
@@ -46,9 +46,28 @@ const onCreateGame = function (event) {
     .catch(ui.onCreateGameFailure)
 }
 
+let currentPlayer = 'X'
+
+const onSpaceClick = function (event) {
+  const target = event.target // This variable is an event listener
+  const cellIndex = target.dataset.cellIndex // The cellIndex variable is pulling the data from HTML for my game board.
+
+  if (store.gameBoard[cellIndex] == null) { // If my board is empty (that is, if all cellIndex are empty)
+    const box = $(event.target)
+    box.css('background', 'transparent').text(currentPlayer)
+    // console.log('Current player is: ', currentPlayer)
+    // console.log('Store of gameBoard is: ', store.gameBoard[cellIndex])
+    store.gameBoard[cellIndex] = currentPlayer
+    currentPlayer = currentPlayer === 'O' ? 'X' : 'O'
+  }
+  console.log('Cell index is: ', cellIndex)
+  console.log(store.gameBoard)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onSignOut,
-  onCreateGame
+  onCreateGame,
+  onSpaceClick
 }
