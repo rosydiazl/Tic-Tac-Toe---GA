@@ -2,7 +2,7 @@
 const store = require('../store')
 
 const onSignUpSuccess = function (data) {
-  $('#message').text('Signed up successfully.')
+  $('#message').text('Signed up successfully!')
   console.log('Sign up successful. Data is: ', data)
   $('form').trigger('reset')
 }
@@ -12,12 +12,14 @@ const onSignUpFailure = function (error) {
   console.error('Sign up failed. Error is: ', error.status)
 }
 const onSignInSuccess = function (data) {
-  $('#message').text('Signed in successfully.')
+  $('#message').text('Signed in successfully!')
   store.user = data.user
   console.log('Sign in successful. Data is: ', data)
   $('form').trigger('reset')
   $('#new-game').show()
   $('#sign-out').show()
+  $('#sign-in').hide()
+  $('#sign-up').hide()
 }
 
 const onSignInFailure = function (error) {
@@ -26,14 +28,17 @@ const onSignInFailure = function (error) {
 }
 
 const onSignOutSuccess = function () {
-  $('#message').text('Signed out successfully.')
+  $('#sign-out-message').text('Log out successful. Come back soon!')
   $('form').trigger('reset')
   console.log('Sign out successfully and nothing was returned.')
+  $('#sign-in').show()
+  $('#sign-out').hide()
+  $('#new-game').hide()
   $('#game-board').hide()
 }
 
 const onSignOutFailure = function (error) {
-  $('#message').text('Sign out failed.')
+  $('#sign-out-message').text('Sign out failed.')
   console.error('Sign out failed. Error is: ', error.status)
 }
 
@@ -42,10 +47,13 @@ const onCreateGameSuccess = function (data) {
   store.game = data.game
   console.log('Data is', data.game)
   $('#game-board').show('slow')
+  $('#sign-in').hide()
+  $('#sign-up').hide()
+  $('#message').hide()
 }
 
 const onCreateGameFailure = function (error) {
-  $('#message').text('Unable to start new game.')
+  $('#create-game-failure').text('Unable to start new game. Try signing in!')
   console.log('Error is', error.status)
 }
 
