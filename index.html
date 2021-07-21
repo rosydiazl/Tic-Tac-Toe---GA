@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Rosy's Tic-Tac-Toe</title>
+      <title>Rosy's Tic-Tac-Toe game</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -18,7 +18,9 @@
     <body>
       <h1>Tic-Tac-Toe</h1>
       <h3>Ready to have some fun?</h3>
+<section>
       <form id="sign-up">
+        <h4>New user? Join us!</h4>
         <label>Email address</label>
         <input name="credentials[email]" type="email">
         <label>Password</label>
@@ -29,12 +31,14 @@
       </form>
 
       <form id="sign-in">
+        <h4>Already have an account?</h4>
         <label>Email address</label>
         <input name="credentials[email]" type="email">
         <label>Password</label>
         <input name="credentials[password]" type="password">
         <input type="submit" value="Sign in">
       </form>
+</section>
 
       <form id="sign-out">
         <input type="submit" value="Sign out">

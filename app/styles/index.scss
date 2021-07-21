@@ -14,17 +14,25 @@ h1 {
 h3, p, label {
 font-family: 'Roboto', sans-serif;
 }
+
  p {
    text-align: center;
    word-wrap: normal;
  }
+h4 {
+   color: #FF8BA0;
+   font-family: 'Tourney', cursive;
+}
+
 
 #sign-in {
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 80px;
+  padding: 50px;
+  margin: 60px;
+  flex-wrap: wrap;
 }
 
 #sign-up {
@@ -32,8 +40,12 @@ font-family: 'Roboto', sans-serif;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 80px;
+  padding: 50px;
+  margin: 60px;
+  flex-wrap: wrap;
 }
+
+
 
 #game-board {
 height: 100vh;
