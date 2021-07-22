@@ -39,9 +39,30 @@ const createGame = function (data) {
   })
 }
 
+const updateGame = function (cellIndex, gameOver) {
+  return $.ajax({
+    url: config.apiUrl + '/games/' + store.game._id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data: {
+      game: {
+        cell: {
+          index: cellIndex,
+          value: store.game.player
+
+        },
+        over: gameOver
+      }
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   signOut,
-  createGame
+  createGame,
+  updateGame
 }
