@@ -35,6 +35,7 @@ const onSignOutSuccess = function () {
   $('#sign-out').hide()
   $('#new-game').hide()
   $('#game-board').hide()
+  $('#update').hide()
 }
 
 const onSignOutFailure = function (error) {
@@ -57,6 +58,16 @@ const onCreateGameFailure = function (error) {
   console.log('Error is', error.status)
 }
 
+const onUpdateGameSuccess = function () {
+  // $('#update').text('Winner is: ', winner)
+  console.log('GAME OVER')
+}
+
+const onUpdateGameFailure = function (error) {
+  $('#update').text('Unable to update game.')
+  console.log('FAILED', error.status)
+}
+
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
@@ -65,5 +76,7 @@ module.exports = {
   onSignOutSuccess,
   onSignOutFailure,
   onCreateGameSuccess,
-  onCreateGameFailure
+  onCreateGameFailure,
+  onUpdateGameSuccess,
+  onUpdateGameFailure
 }
