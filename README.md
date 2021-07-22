@@ -16,7 +16,7 @@ This application allows users to create an account if they don't have one or log
 
 ## PLANNING: 
 
-# # # USER STORIES (TIC-TAC-TOE GAME) 
+### USER STORIES (TIC-TAC-TOE GAME) 
 
  
 1. As a user, I want to be able to log in if I have an account so that I can play the game. 
