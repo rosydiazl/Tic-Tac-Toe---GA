@@ -39,7 +39,7 @@ const onSignOut = function (event) {
 const onCreateGame = function (event) {
   event.preventDefault()
   // console.log('Game created')
-
+  store.game = null
   const data = getFormFields(this)
   api.createGame(data)
     .then(ui.onCreateGameSuccess)
