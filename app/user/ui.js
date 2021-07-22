@@ -11,6 +11,8 @@ const onSignUpFailure = function (error) {
   $('#message').text('Sign up failed.')
   console.error('Sign up failed. Error is: ', error.status)
 }
+
+// These are two functions that
 const onSignInSuccess = function (data) {
   $('#message').text('Signed in successfully!')
   store.user = data.user
