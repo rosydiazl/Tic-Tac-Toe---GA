@@ -1,5 +1,6 @@
 'use strict'
 const store = require('../store')
+// const { onRestartGame } = require('./events')
 
 const onSignUpSuccess = function (data) {
   $('#message').text('Signed up successfully!')
@@ -12,7 +13,7 @@ const onSignUpFailure = function (error) {
   console.error('Sign up failed. Error is: ', error.status)
 }
 
-// These are two functions that
+// These are two functions that...
 const onSignInSuccess = function (data) {
   $('#message').text('Signed in successfully!')
   store.user = data.user
@@ -60,9 +61,10 @@ const onCreateGameFailure = function (error) {
   console.log('Error is', error.status)
 }
 
-const onUpdateGameSuccess = function () {
-  // $('#update').text('Winner is: ', winner)
-  console.log('GAME OVER')
+const onUpdateGameSuccess = function (data) {
+  // store.game = data.game
+  // console.log('GAME OVER')
+  // $('#update').hide()
 }
 
 const onUpdateGameFailure = function (error) {
