@@ -81,9 +81,9 @@ const onUpdateGame = function (event) {
       $('#update').text('It is a tie')
     }
 
-    api.updateGame(cellIndex, gameOver)
-      .then(ui.onUpdateGameSuccess)
-      .catch(ui.onUpdateGameFailure)
+    // api.updateGame(cellIndex, gameOver)
+  // .then(ui.onUpdateGameSuccess)
+  // .catch(ui.onUpdateGameFailure)
   }
 }
 
