@@ -13,7 +13,6 @@ const onSignUpFailure = function (error) {
   console.error('Sign up failed. Error is: ', error.status)
 }
 
-// These are two functions that...
 const onSignInSuccess = function (data) {
   $('#message').text('Signed in successfully!')
   store.user = data.user
@@ -23,6 +22,7 @@ const onSignInSuccess = function (data) {
   $('#sign-out').show()
   $('#sign-in').hide()
   $('#sign-up').hide()
+  $('#sign-out-message').text('')
 }
 
 const onSignInFailure = function (error) {
@@ -38,7 +38,7 @@ const onSignOutSuccess = function () {
   $('#sign-out').hide()
   $('#new-game').hide()
   $('#game-board').hide()
-  $('#update').hide()
+  $('#update').text('')
 }
 
 const onSignOutFailure = function (error) {
@@ -63,13 +63,11 @@ const onCreateGameFailure = function (error) {
 
 const onUpdateGameSuccess = function (data) {
   // store.game = data.game
-  // console.log('GAME OVER')
-  // $('#update').hide()
 }
 
 const onUpdateGameFailure = function (error) {
   $('#update').text('Unable to update game.')
-  console.log('FAILED', error.status)
+  console.log('Unable to update game. Error is: ', error.status)
 }
 
 module.exports = {

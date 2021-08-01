@@ -85,16 +85,13 @@ const onUpdateGame = function (event) {
       .then(ui.onUpdateGameSuccess)
       .catch(ui.onUpdateGameFailure)
   }
-
-  console.log('Game data is', store.game)
-  console.log('Winner is: ', checkWin())
 }
 
 const onRestartGame = function (event) {
   // start player as 'X'
-  let player = 'X'
+  player = 'X'
   // start game as not over
-  const gameOver = false
+  gameOver = false
 
   // event listener. Pull cells from HTML
   const target = document.querySelectorAll('.box')
@@ -108,15 +105,7 @@ const onRestartGame = function (event) {
   // empties the game board after game is over
   box.css('background', 'transparent').text('')
 
-  // alternate between 'X' and 'O'
-  player = player === 'O' ? 'X' : 'O'
-
-  // reassign the value of player after user clicks on box
-  store.game.target = player
-
-  store.game.player = player
-
-  console.log('Event target is: ', target)
+  $('#update').text('')
 }
 
 // Conditions on which the game ends: 3 Xs or Os in a row.
