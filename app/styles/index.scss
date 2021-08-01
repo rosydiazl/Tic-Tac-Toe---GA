@@ -1,0 +1,86 @@
+@import '~bootstrap/scss/bootstrap';
+
+body {
+  text-align: center;
+  background-color: #000000;
+  color: #EEEEEE;
+}
+
+h1 {
+  font-family: 'Tourney', cursive;
+  font-size: 4rem;
+}
+
+h3, p, label {
+font-family: 'Roboto', sans-serif;
+}
+
+ p {
+   text-align: center;
+   word-wrap: normal;
+ }
+h4 {
+   color: #EEEEEE;
+   font-family: 'Tourney', cursive;
+}
+
+
+#sign-in {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  margin: 60px;
+  flex-wrap: wrap;
+}
+
+#sign-up {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  margin: 60px;
+  flex-wrap: wrap;
+}
+
+
+
+#game-board {
+height: 100vh;
+}
+
+#update {
+  font-size: 3rem;
+
+}
+
+.board {
+  margin: auto;
+  max-height: calc(100vh - 75px);
+  max-width: calc(100vh - 75px);
+  background-size: cover;
+}
+
+.box {
+  display: flex;
+   justify-content: center;
+   align-items: center;
+  border-bottom: 5px solid #EEEEEE;
+  border-right: 5px solid #EEEEEE;
+  min-height: calc(100% / 3);
+  color: #EEEEEE;
+  font-size: 15vh;
+  color: #FF8BA0;
+  text-shadow: 2px 2px rgba(0 , 0, 0, .25);
+  font-size: 20vh;
+  user-select: none;
+
+  &:nth-child(3n) {
+    border-right: 0;
+  }
+ &:nth-last-child(-1n + 3) {
+    border-bottom: 0;
+  }
+}
