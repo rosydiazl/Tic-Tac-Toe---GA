@@ -61,14 +61,14 @@ const onCreateGameFailure = function (error) {
   console.log('Error is', error.status)
 }
 
-const onUpdateGameSuccess = function (data) {
-  // store.game = data.game
-}
+// const onUpdateGameSuccess = function (data) {
+// store.game = data.game
+// }
 
-const onUpdateGameFailure = function (error) {
-  $('#update').text('Unable to update game.')
-  console.log('Unable to update game. Error is: ', error.status)
-}
+// const onUpdateGameFailure = function (error) {
+//  $('#update').text('Unable to update game.')
+// console.log('Unable to update game. Error is: ', error.status)
+// }
 
 module.exports = {
   onSignUpSuccess,
@@ -78,7 +78,7 @@ module.exports = {
   onSignOutSuccess,
   onSignOutFailure,
   onCreateGameSuccess,
-  onCreateGameFailure,
-  onUpdateGameSuccess,
-  onUpdateGameFailure
+  onCreateGameFailure
+  // onUpdateGameSuccess,
+  // onUpdateGameFailure
 }
